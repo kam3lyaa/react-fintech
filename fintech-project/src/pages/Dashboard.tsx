@@ -23,12 +23,14 @@ const Dashboard = () =>  {
           cor="texto-verde"
           value={5000}
           icone='bi bi-graph-up-arrow'
+          route="/expenses"
           />
           <SummaryCard
           name="Expenses"
           cor="texto-vermelho"
           value={500}
           icone='bi bi-graph-down-arrow'
+          route="/expenses"
           />
 
 
