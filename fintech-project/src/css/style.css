@@ -1,0 +1,206 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-color);
+  color: white;
+}
+
+.bg-color{
+  background-color: var(--bg-color);
+}
+
+#root {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+.container-principal {
+  background:linear-gradient(var(--bg-color2),var(--bg-color));
+  width: 80vw;
+
+  padding: 3%;
+  margin: 2% auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.meu-botao {
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+}
+
+.meu_texto{
+  margin-bottom: 0;
+  font-size: 4vw ;
+}
+
+.texto-verde{
+  color: var(--verde);
+}
+
+.bg-azul{
+  background-color: var(--azul);
+}
+
+.minha-font{
+  font-size: 4vh;
+  margin-bottom: 0;
+
+}
+
+
+.icone-ini{
+  font-size: 5vw;
+}
+
+.icone-page{
+  font-size: 15vw;
+
+}
+.icone-exibicao{
+  font-size: 5rem;
+
+
+}
+.icone-pig-ini{
+  font-size: 8vw;
+}
+
+.icone-invest-ini{
+  font-size: 7vw;
+}
+
+.texto-vermelho{
+  color: var(--vermelho);
+}
+.texto-azul2{
+  color: var(--azul2);
+}
+
+.data{
+  font-weight: 500;
+  font-size: 2vh;
+  margin-bottom: 0;
+}
+
+.grafico{
+  width: 80%;
+  height: 30%;
+}
+
+html{
+  font-size: 82.5%; 
+}
+
+
+.click{
+  text-decoration: none;
+  padding: 0;
+}
+
+a {
+  all: revert;
+  color: inherit; 
+  text-decoration: none ;
+  display: contents;
+}
+
+.card-link{
+  all: revert;
+  color: inherit;
+  text-decoration: none ;
+  display: contents;
+}
+
+
+.meu-logo{
+  max-width: 4rem;
+  
+}
+
+
+.button-delete{
+  background: none;
+  color:var(--vermelho);
+  border: none;
+  font-size: 2rem;
+  margin: auto;
+}
+.button-edit{
+  background: none;
+  color:var(--azul2);
+  border: none;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.section-exib{
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.add-button{
+  background: none;
+  border: none;
+  padding: 1rem 4rem;
+  background-color: var(--azul);
+  border-radius: 6rem;
+  color: var(--branco);
+}
+
+
+.button-invest{
+  background: none;
+  border: none;
+  background-color: var(--azul2);
+  border-radius: 5rem;
+  color: var(--branco);
+  padding: 1rem 1rem;
+  white-space: nowrap;
+
+}
+
+.menu-filtro{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  width: 85vw;
+  height: 10vh;
+}
+
+.month-selector{
+  background: none;
+  /* background-color: var(--azul); */
+  color: var(--branco);
+  opacity: 5;
+  border: none;
+  text-align: center;
+}
+
+.ultimo-gasto {
+  cursor: pointer;
+}
+.direcionar-gastos{
+  cursor: pointer;
+}
+.direcionar-receitas{
+  cursor: pointer;
+}
+.direcionar-objetivos{
+  cursor: pointer;
+}
+.direcionar-invest{
+  cursor: pointer;
+}
+
+
+.texto-branco{
+  color: var(--branco);
+}
