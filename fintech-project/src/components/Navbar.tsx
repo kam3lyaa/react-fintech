@@ -36,7 +36,7 @@ function Navbar(){
                 <a className="nav-link" href="investimentos.html">Investimentos</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Objetivos Financeiros</a>
+                <a className="nav-link" href="/goals">Objetivos Financeiros</a>
               </li>
               <li className="nav-item dropdown">
                 <a
