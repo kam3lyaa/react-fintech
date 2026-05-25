@@ -3,51 +3,48 @@ import Navbar from "../components/Navbar";
 import TransactionContainer from "../components/TransactionContainer";
 import TransactionListHeader from "../components/TransactionListHeader";
 
-
-const expenses = [{
-  name:'Almoço',
-  amount: 50.5,
+const incomes = [{
+  name:'Freelancer',
+  amount: 550.5,
   date: '20-05-2026'
   },
   {
-  name:'Jantar',
-  amount: 50.5,
+  name:'Salário',
+  amount: 5000.5,
   date: '20-05-2026'
   },
   {
-  name:'Internet',
+  name:'Pix',
   amount: 150,
   date: '20-05-2026'
   },{
-  name:'Luz',
+  name:'Hora extra',
   amount: 300.5,
   date: '20-05-2026'
   }
 
 ]
-
-
-const Expenses = () => {
+const Incomes = () => {
   return (
     <>
         <Navbar/>
         <main className="container p-3 rounded-3 text-light container-principal w-100 ">
       <section className="row">
         <TransactionListHeader
-          color='texto-vermelho'
-          name="Expenses"
-          icon="bi bi-graph-down-arrow"
+          color='texto-verde'
+          name="Income"
+          icon="bi bi-graph-up-arrow"
           total= {200}
           />
 
 
-        <TransactionContainer data={expenses}
-          colorIcon="texto-vermelho"
-          icon="bi bi-cash-stack"
-          />
+        <TransactionContainer data={incomes} 
+        colorIcon="texto-verde"
+        icon="bi bi-cash-coin"
+        />
 
         <AddButton 
-        transaction="Gasto"/>
+        transaction="Receita"/>
         
         </section>
     </main> 
@@ -55,4 +52,4 @@ const Expenses = () => {
   );
 }
 
-export default Expenses;
+export default Incomes;

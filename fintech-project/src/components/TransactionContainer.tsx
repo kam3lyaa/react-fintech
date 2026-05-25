@@ -1,25 +1,43 @@
 import TransactionElement from "./TransactionElement";
 
-const TransactionContainer = () => {
+
+interface Transaction{
+  name:string
+  amount: number
+  date:string
+}
+
+interface Props {
+  data: Transaction[];
+  colorIcon: string
+  icon:string
+}
+
+const TransactionContainer = ({ data, colorIcon, icon } : Props) => {
   return (
             <section className="section-exib  exibir-gastos ">
 
+            {
+              data.map((item)=> {
 
-              {/* inicio da gambiarra */}
-                <TransactionElement
-    name="salário"
-    iconColor='texto-verde'
-    icon='bi bi-coin'
-    date='27-05-1994'
-    value={5000}
-    />
-                <TransactionElement
-    name="salário"
-    iconColor='texto-verde'
-    icon='bi bi-coin'
-    date='27-05-1994'
-    value={5000}
-    />
+                return (
+                  <TransactionElement 
+                    name={item.name}                   
+                    value={item.amount}
+                    date={item.date}
+                    icon={icon}
+                    iconColor={colorIcon}
+                  />
+                )
+
+              })
+              
+            }
+
+
+
+
+
 
 
           <article className="col-11 row my-4 mx-auto my-auto " >
