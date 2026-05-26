@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import AddButton from "../components/AddButton";
 import Navbar from "../components/Navbar";
 import TransactionContainer from "../components/TransactionContainer";
@@ -25,6 +26,7 @@ const incomes = [{
 
 ]
 const Incomes = () => {
+  const navigate = useNavigate();
   return (
     <>
         <Navbar/>
@@ -44,7 +46,9 @@ const Incomes = () => {
         />
 
         <AddButton 
-        transaction="Receita"/>
+        text='Adicionar Income'
+        onClick={()=> {navigate("/incomes/add")}}
+        />
         
         </section>
     </main> 
