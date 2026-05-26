@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 function Navbar(){
+  const navigate = useNavigate();
   return (
 
     <header className="container ">
@@ -7,7 +10,7 @@ function Navbar(){
         data-bs-theme="dark"
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"><img src="/images/logo.png" className="fs-1 meu-logo me-2"/>DeQEconomy</a>
+          <div onClick={() => navigate("/")}  style={{cursor : "pointer"}} className="navbar-brand"><img src="/images/logo.png" className="fs-1 meu-logo me-2"/>DeQEconomy</div>
           <button
             className="navbar-toggler ms-auto"
             type="button"
@@ -22,18 +25,17 @@ function Navbar(){
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#"
-                  >Dashboard</a
-                >
+                <div  onClick={() => navigate("/")}  style={{cursor : "pointer"}} className="nav-link active" aria-current="page"
+                  >Dashboard</div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="receitas.html">Receitas</a>
+                <div  onClick={() => navigate("/incomes")}  style={{cursor : "pointer"}}  className="nav-link">Receitas</div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="gastos.html">Gastos</a>
+                <div onClick={() => navigate("/expenses")}  style={{cursor : "pointer"}} className="nav-link">Gastos</div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="investimentos.html">Investimentos</a>
+                <div className="nav-link" onClick={() => navigate("/investments")}  style={{cursor : "pointer"}}>Investimentos</div>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Objetivos Financeiros</a>
@@ -49,11 +51,11 @@ function Navbar(){
                   Adicionar
                 </a>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="receitas.html">Receita</a></li>
+                  <li><div className="dropdown-item" onClick={() => navigate("/incomes/add")} style={{cursor:"pointer"}}>Receita</div></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#">Gasto</a></li>
+                  <li><div  onClick={() => navigate("/expenses/add")} style={{cursor:"pointer"}} className="dropdown-item" >Gasto</div></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#">Investimento</a></li>
+                  <li><div onClick={() => navigate("/investments/add")} style={{cursor:"pointer"}}  className="dropdown-item" >Investimento</div></li>
                   <li><hr className="dropdown-divider" /></li>
                   <li>
                     <a className="dropdown-item" href="#">Objetivo Fiananceiro</a>

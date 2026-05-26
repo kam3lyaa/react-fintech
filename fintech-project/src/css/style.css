@@ -202,3 +202,22 @@ a {
 .texto-branco{
   color: var(--branco);
 }
+
+
+
+/* inputs */
+
+.input-label{
+  background:none;
+  padding:1vh;
+  border-radius:2vh;
+  width: 90%;
+}
+
+.label-input-element{
+  display: block;
+  text-align: start;
+    font-size: 1rem;
+    margin-left: 2vh;
+    margin-bottom: .5vh;
+}
