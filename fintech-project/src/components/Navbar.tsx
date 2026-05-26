@@ -38,7 +38,7 @@ function Navbar(){
                 <div className="nav-link" onClick={() => navigate("/investments")}  style={{cursor : "pointer"}}>Investimentos</div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Objetivos Financeiros</a>
+                <a className="nav-link" href="/goals">Objetivos Financeiros</a>
               </li>
               <li className="nav-item dropdown">
                 <a

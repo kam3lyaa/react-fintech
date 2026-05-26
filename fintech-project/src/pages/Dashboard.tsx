@@ -38,7 +38,7 @@ const Dashboard = () =>  {
           name='Goals'
           icon='bi bi-piggy-bank'
           size='icone-pig-ini'
-          route="/incomes"
+          route="/goals"
           />
 
           <ActionCard 
