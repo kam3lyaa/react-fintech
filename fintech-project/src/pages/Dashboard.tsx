@@ -23,12 +23,14 @@ const Dashboard = () =>  {
           cor="texto-verde"
           value={5000}
           icone='bi bi-graph-up-arrow'
+          route="/incomes"
           />
           <SummaryCard
           name="Expenses"
           cor="texto-vermelho"
           value={500}
           icone='bi bi-graph-down-arrow'
+          route="/expenses"
           />
 
 
@@ -36,12 +38,14 @@ const Dashboard = () =>  {
           name='Goals'
           icon='bi bi-piggy-bank'
           size='icone-pig-ini'
+          route="/goals"
           />
 
           <ActionCard 
           name='Investment'
           icon='bi bi bi-cash-coin'
           size='icone-invest-ini'
+          route="/investment"
           />
       </section>
       

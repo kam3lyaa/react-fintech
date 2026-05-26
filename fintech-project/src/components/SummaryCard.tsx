@@ -1,13 +1,18 @@
+import { useNavigate } from "react-router-dom";
+
 interface SummaryCardProps{
   name: string,
   cor: string,
   value: number,
   icone: string
+  route: string
 }
 
-const SummaryCard = ({ name,cor,value, icone }: SummaryCardProps) => {
-    return (
-          <aside className="col-6 p-3 row m-auto direcionar-receitas">
+const SummaryCard = ({ name,cor,value, icone, route }: SummaryCardProps) => {
+    const navigate  = useNavigate();  
+  return (
+          <aside onClick={()=> navigate(route)} style={{cursor: "pointer"}}
+          className="col-6 p-3 row m-auto">
               <div
                 className="col-8 p-0 align-items-end justify-content-end d-flex"
               >
@@ -17,7 +22,7 @@ const SummaryCard = ({ name,cor,value, icone }: SummaryCardProps) => {
                 <i className={`${icone} display-6 icone-ini ${cor}`}></i>
               </div>
               <div className="col-12 ">
-                <p className={`text-center mb-0 ${cor} fs-1 total-receita`}>R${value.toLocaleString('pt-BR', {
+                <p className={`text-center mb-0 ${cor} fs-1`}>R${value.toLocaleString('pt-BR', {
     minimumFractionDigits: 2
   })}</p>
               </div>
