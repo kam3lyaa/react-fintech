@@ -3,24 +3,29 @@ import AddButton from "../components/AddButton";
 import Navbar from "../components/Navbar";
 import TransactionContainer from "../components/TransactionContainer";
 import TransactionListHeader from "../components/TransactionListHeader";
+
 const incomes = [{
   name:'Tesouro direto',
   amount: 550.5,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:"36"
   },
   {
   name:'CDI',
   amount: 5000.5,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:"37"
   },
   {
   name:'Tesouro Direto',
   amount: 150,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:"38"
   },{
   name:'Investimento',
   amount: 300.5,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:"39"
   }
 ];
 

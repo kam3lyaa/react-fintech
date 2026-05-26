@@ -7,21 +7,25 @@ import TransactionListHeader from "../components/TransactionListHeader";
 const incomes = [{
   name:'Freelancer',
   amount: 550.5,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:"28"
   },
   {
   name:'Salário',
   amount: 5000.5,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:"27"
   },
   {
   name:'Pix',
   amount: 150,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:"29"
   },{
   name:'Hora extra',
   amount: 300.5,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:"26"
   }
 
 ]
