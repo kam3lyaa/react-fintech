@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import TransactionAddHeader from '../components/TransactionAddHeader';
 import TransactionForm from '../components/TransactionForm';
 import ExpenseForm from '../components/ExpenseForm';
+import { useNavigate } from 'react-router-dom';
 
 type Expense = {
 user: {
@@ -26,7 +27,7 @@ interface AddExpenseProps{
 }
 const AddExpense =({setExpenses}: AddExpenseProps) => {
 
-
+  const navigate = useNavigate();
   const idCategory = 2;
 
   const [amount, setAmount] = React.useState('');
@@ -73,6 +74,7 @@ const AddExpense =({setExpenses}: AddExpenseProps) => {
       const data = await response.json()
       console.log(data);
       setExpenses((prev) => [...prev, expense])
+      navigate('/expenses'); 
     }catch(error) {
       console.log(error);
       
