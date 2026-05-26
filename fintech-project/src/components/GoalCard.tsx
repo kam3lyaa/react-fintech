@@ -4,7 +4,7 @@ interface Goal {
   name: string;
   icon: string;
   value: string;
-  route: string;
+  id:string
 }
 
 interface GoalCardProps {
@@ -33,8 +33,8 @@ const GoalCard = ({ data, color }: GoalCardProps) => {
               <p className="m-0 fs-3 fw-bold">{item.name}</p>
               <p className="m-0 fs-3 small">R$ {item.value}</p>
 
-              <span className="fs-2 text-decoration-none texto-azul2"
-              onClick={() => navigate(item.route)}
+              <span className="fs-1 text-decoration-none texto-azul2"
+              onClick={() => navigate("")}
                 style={{ cursor: "pointer" }}
             >
                 Ver mais

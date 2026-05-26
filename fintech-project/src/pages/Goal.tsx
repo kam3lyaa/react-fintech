@@ -8,24 +8,24 @@ const goals = [{
     name: "Mensalidade FIAP",
     icon: "bi bi-mortarboard",
     value: "755.0",
-    route: "#",
+    id: "22",
     },
     {
     name: "Carro novo",
     icon: "bi bi-car-front-fill",
     value: "755.0",
-    route: "#",
+    id: "23",
     },
     {
     name: "Reserva",
     icon: "bi bi-wallet",
     value: "755.0",
-    route: "#",
+    id: "24",
     },{
     name: "Viagem",
     icon: "bi bi-airplane",
     value: "755.0",
-    route: "#",
+    id: "25",
     }
     ];   
 

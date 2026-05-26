@@ -8,21 +8,25 @@ import TransactionListHeader from "../components/TransactionListHeader";
 const expenses = [{
   name:'Almoço',
   amount: 50.5,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:'1'
   },
   {
   name:'Jantar',
   amount: 50.5,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:'2'
   },
   {
   name:'Internet',
   amount: 150,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:'3'
   },{
   name:'Luz',
   amount: 300.5,
-  date: '20-05-2026'
+  date: '20-05-2026',
+  id:'4'
   }
 
 ]
