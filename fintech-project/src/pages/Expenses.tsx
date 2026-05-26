@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import AddButton from "../components/AddButton";
 import Navbar from "../components/Navbar";
@@ -5,35 +6,56 @@ import TransactionContainer from "../components/TransactionContainer";
 import TransactionListHeader from "../components/TransactionListHeader";
 
 
-const expenses = [{
-  name:'Almoço',
-  amount: 50.5,
-  date: '20-05-2026',
-  id:'1'
-  },
-  {
-  name:'Jantar',
-  amount: 50.5,
-  date: '20-05-2026',
-  id:'2'
-  },
-  {
-  name:'Internet',
-  amount: 150,
-  date: '20-05-2026',
-  id:'3'
-  },{
-  name:'Luz',
-  amount: 300.5,
-  date: '20-05-2026',
-  id:'4'
+type Expense = {
+  user: {
+    id: number
   }
 
-]
+  category: {
+    id: number
+  }
+
+  amount: number
+  date: string
+  description: string
+  paymentMethod: string
+  paid: boolean
+  recurringPayment: boolean
+}
 
 
-const Expenses = () => {
+interface ExpensesProps{
+  expenses: Expense[]
+  setExpenses: React.Dispatch<React.SetStateAction<Expense[]>>
+}
+
+
+
+const Expenses = ({ expenses, setExpenses  }: ExpensesProps) => {
   const navigate = useNavigate();
+
+  //const [expenses,setExpenses] = array; //--> array destructuring --> the order metters
+
+  // const expenses = array[0];--> current data
+  // const setExpenses = array[1];--> updater function
+
+  const fetchExpenses = async () => {
+    try {
+
+      const response = await fetch('http://localhost:8080/api/expenses')
+      const data = await response.json()
+      setExpenses(data)
+      console.log(data);
+      
+    }catch(error) {
+      console.log(error)
+    }
+  }
+  
+  React.useEffect(() => {
+    fetchExpenses()
+  }, [])
+
   return (
     <>
         <Navbar/>
@@ -55,7 +77,8 @@ const Expenses = () => {
         <AddButton 
         text="Adicionar Gasto"
         onClick={() => navigate("/expenses/add")}/>
-        
+
+
         </section>
     </main> 
     </>
