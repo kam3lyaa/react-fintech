@@ -9,6 +9,7 @@ import AddIncome from "./pages/AddIncome";
 import Investment from "./pages/Investment";
 import Goal from "./pages/Goal";
 import AddInvestment from "./pages/AddInvestment";
+import AddGoal from "./pages/AddGoal";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         
         <Route path="/goals" element={<Goal />} />
+        <Route path="/goals/add" element={<AddGoal />}/>
 
         <Route path="/expenses" element={<Expenses />}/>
         <Route path="/expenses/add" element={<AddExpense />}/>
@@ -28,10 +30,6 @@ function App() {
 
         <Route path="/investments" element={<Investment />}/>
         <Route path="/investments/add" element={<AddInvestment />}/>
-
-        <Route path="/goal" element={<Goal />}/>
-
-        
 
       </Routes>
     </BrowserRouter>

@@ -16,8 +16,8 @@ const GoalCard = ({ data, color }: GoalCardProps) => {
   const navigate = useNavigate();
 
   return (
-    <section className="section-exib exibir-goals  row g-3 align-items-stretch">
-      <div className="row">
+    <section className="section-exib exibir-goals">
+      <div className="row g-3 justify-content-center">
 
         {data.map((item) => (
           <aside
@@ -29,11 +29,11 @@ const GoalCard = ({ data, color }: GoalCardProps) => {
               <i className={`${item.icon} display-1 ${color}`} />
             </div>
 
-            <div className="col-8 p-1 meu_texto text-center text-start d-flex flex-column justify-content-center">
-              <p className="m-0 fs-1 fw-bold">{item.name}</p>
-              <p className="m-0 fs-1 small">R$ {item.value}</p>
+            <div className="p-1 meu_texto text-center d-flex flex-column justify-content-center">
+              <p className="m-0 fs-3 fw-bold">{item.name}</p>
+              <p className="m-0 fs-3 small">R$ {item.value}</p>
 
-              <span className="fs-1 text-decoration-none texto-azul2"
+              <span className="fs-2 text-decoration-none texto-azul2"
               onClick={() => navigate(item.route)}
                 style={{ cursor: "pointer" }}
             >

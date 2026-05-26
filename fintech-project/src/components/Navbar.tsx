@@ -58,7 +58,7 @@ function Navbar(){
                   <li><div onClick={() => navigate("/investments/add")} style={{cursor:"pointer"}}  className="dropdown-item" >Investimento</div></li>
                   <li><hr className="dropdown-divider" /></li>
                   <li>
-                    <div onClick={() => navigate("/goals")} style={{cursor:"pointer"}} className="dropdown-item" >Objetivo Fiananceiro</div>
+                    <div onClick={() => navigate("/goals/add")} style={{cursor:"pointer"}} className="dropdown-item" >Objetivo Fiananceiro</div>
                   </li>
                 </ul>
               </li>

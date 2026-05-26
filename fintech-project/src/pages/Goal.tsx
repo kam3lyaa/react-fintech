@@ -38,7 +38,7 @@ const Goal = () =>  {
             <main className="container p-3 rounded-3 text-light container-principal w-100 ">
         <section className="row">
                 <GoalTransactionListHeader
-                name="Meus Objetivos"
+                name="My Goals"
                 color="texto-azul2"
                 icon="bi bi-piggy-bank"
                 />
@@ -50,7 +50,7 @@ const Goal = () =>  {
 
                 <AddButton
                 text='Adicionar Goal'
-                onClick={()=> {navigate("/goal/add")}}
+                onClick={()=> {navigate("/goals/add")}}
                 />
                 
             </section>
