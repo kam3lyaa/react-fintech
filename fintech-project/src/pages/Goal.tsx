@@ -1,35 +1,37 @@
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import GoalCard from "../components/GoalCard";
 import AddButton from "../components/AddButton";
 import GoalTransactionListHeader from "../components/GoalTransactionListHeader";
 
 const goals = [{
-  name: "Mensalidade FIAP",
-  icon: "bi bi-mortarboard",
-  value: "755.0",
-  route: "#",
-  },
-  {
-  name: "Carro novo",
-  icon: "bi bi-car-front-fill",
-  value: "755.0",
-  route: "#",
-  },
-  {
-  name: "Reserva",
-  icon: "bi bi-wallet",
-  value: "755.0",
-  route: "#",
-  },{
-  name: "Viagem",
-  icon: "bi bi-airplane",
-  value: "755.0",
-  route: "#",
-  }
-]
+    name: "Mensalidade FIAP",
+    icon: "bi bi-mortarboard",
+    value: "755.0",
+    route: "#",
+    },
+    {
+    name: "Carro novo",
+    icon: "bi bi-car-front-fill",
+    value: "755.0",
+    route: "#",
+    },
+    {
+    name: "Reserva",
+    icon: "bi bi-wallet",
+    value: "755.0",
+    route: "#",
+    },{
+    name: "Viagem",
+    icon: "bi bi-airplane",
+    value: "755.0",
+    route: "#",
+    }
+    ];   
 
 
 const Goal = () =>  {
+    const navigate = useNavigate();
     return(
         <>
             <Navbar/>
@@ -47,7 +49,9 @@ const Goal = () =>  {
 
 
                 <AddButton
-                transaction="Objetivo"/>
+                text='Adicionar Goal'
+                onClick={()=> {navigate("/goal/add")}}
+                />
                 
             </section>
             </main>

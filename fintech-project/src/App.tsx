@@ -29,6 +29,10 @@ function App() {
         <Route path="/investments" element={<Investment />}/>
         <Route path="/investments/add" element={<AddInvestment />}/>
 
+        <Route path="/goal" element={<Goal />}/>
+
+        
+
       </Routes>
     </BrowserRouter>
 
