@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import type { Expense } from "../src/types/Expense";
 import Dashboard from "./pages/Dashboard";
-
+import React from 'react';
 import './App.css'
-import Expenses from "./pages/Expenses";
+import ExpensesPage from "./pages/ExpensesPage";
 import AddExpense from "./pages/AddExpense";
+import EditExpense from "./pages/EditExpense";
 import Incomes from "./pages/Incomes";
 import AddIncome from "./pages/AddIncome";
 import Investment from "./pages/Investment";
@@ -13,6 +15,8 @@ import AddGoal from "./pages/AddGoal";
 
 
 function App() {
+
+  const [ expenses, setExpenses ] = React.useState<Expense[]>([]);
     return (
     <>
     <BrowserRouter>
@@ -22,8 +26,22 @@ function App() {
         <Route path="/goals" element={<Goal />} />
         <Route path="/goals/add" element={<AddGoal />}/>
 
-        <Route path="/expenses" element={<Expenses />}/>
-        <Route path="/expenses/add" element={<AddExpense />}/>
+        <Route path="/expenses" element={<ExpensesPage 
+          expenses={expenses}
+          setExpenses= {setExpenses}
+        />}/>
+        <Route path="/expenses/add" element={<AddExpense 
+        setExpenses={setExpenses}
+        />}/>
+        <Route
+          path='/expenses/edit/:id'
+          element= {
+            <EditExpense
+              expenses={expenses}
+              setExpenses={setExpenses}
+              />
+          }
+        />
 
         <Route path="/incomes" element={<Incomes />}/>
         <Route path="/incomes/add" element={<AddIncome />}/>

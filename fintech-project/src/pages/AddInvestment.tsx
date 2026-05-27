@@ -14,7 +14,7 @@ const AddInvestment = () => {
           name="Add Expense"
           color='texto-azul2'
           icon='bi bi-graph-down-arrow'
-          amount={200}
+          amount={amount}
           />
           <TransactionForm/>
           <InvestmentForm />

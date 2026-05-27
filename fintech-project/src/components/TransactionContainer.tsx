@@ -1,44 +1,46 @@
 import TransactionElement from "./TransactionElement";
 
-
-interface Transaction{
-  name:string
+type Transaction = {
+  id: number
   amount: number
-  date:string
-  id:string
+  date: string
+  description: string
 }
 
 interface Props {
   data: Transaction[];
   colorIcon: string
-  icon:string
-  
+  icon: string
+  onDelete: (id: number) =>void
+  onEdit: (id: number) =>void
 }
 
-const TransactionContainer = ({ data, colorIcon, icon } : Props) => {
+const TransactionContainer = ({ data, colorIcon, icon, onDelete, onEdit }: Props) => {
+
   return (
-            <section className="section-exib  exibir-gastos ">
+    <section className="section-exib exibir-gastos">
 
-              {
-                data.map((item)=> {
+      {
+        data.map((item, index) => {
 
-                  return (
-                    <TransactionElement 
-                      name={item.name}                   
-                      value={item.amount}
-                      date={item.date}
-                      icon={icon}
-                      iconColor={colorIcon}
-                      key={item.id}
-                    />
-                  )
+          return (
+            <TransactionElement
+              name={item.description}
+              value={item.amount}
+              date={item.date}
+              icon={icon}
+              iconColor={colorIcon}
+              key={index}
+              onDelete={()=> onDelete(item.id)}
+              onEdit={()=> onEdit(item.id)}
+            />
+          )
 
-                })
-              
-            }
+        })
+      }
 
-            </section>
+    </section>
   );
 }
 
-export default TransactionContainer;  
+export default TransactionContainer;

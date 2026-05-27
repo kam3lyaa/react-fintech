@@ -1,12 +1,13 @@
+import React from "react"
 interface TransactionAddHeaderProps {
 name: string
 color: string
 icon: string
-amount: number
+amount: string
+setAmount: React.Dispatch<React.SetStateAction<string>>;
 }              
-const TransactionAddHeader = ({ name,color, amount, icon }: TransactionAddHeaderProps) => {
+const TransactionAddHeader = ({ name,color, icon, amount, setAmount }: TransactionAddHeaderProps) => {
               
-
               
     return (
         <section className="row  my-4 mx-auto p-6">
@@ -14,7 +15,7 @@ const TransactionAddHeader = ({ name,color, amount, icon }: TransactionAddHeader
             <div className="col-6 m-auto">
               <p className="meu_texto  display-4">{name}</p>
               <p className={`meu_texto  display-4 ${color} `}>
-                <input type="text" style={{background:"none",border:'none'}} size={6} placeholder="R$ 00,00"/>
+                <input type="number" value={amount} style={{background:"none",border:'none'}} size={6} placeholder="R$ 00,00" onChange={(e)=> setAmount(e.target.value)}/>
               </p>
             </div>
             <div className="col-6 p-0 ps-1 b text-center p-4">
