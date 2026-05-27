@@ -8,10 +8,11 @@ import TransactionAddHeader from "../components/TransactionAddHeader";
 import type { Expense } from "../types/Expense";
 
 interface EditExpenseProps {
+  expenses: Expense[];
   setExpenses: React.Dispatch<React.SetStateAction<Expense[]>>;
 }
 
-const EditExpense = ({ setExpenses }: EditExpenseProps) => {
+const EditExpense = ({ expenses, setExpenses }: EditExpenseProps) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
