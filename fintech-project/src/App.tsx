@@ -1,30 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import type { Expense } from "../src/types/Expense";
 import Dashboard from "./pages/Dashboard";
 import React from 'react';
 import './App.css'
-import ExpensesPage from "./pages/Expenses";
+import ExpensesPage from "./pages/ExpensesPage";
 import AddExpense from "./pages/AddExpense";
+import EditExpense from "./pages/EditExpense";
 import Incomes from "./pages/Incomes";
 import AddIncome from "./pages/AddIncome";
 import Investment from "./pages/Investment";
 import Goal from "./pages/Goal";
 import AddInvestment from "./pages/AddInvestment";
-  type Expense =  {
-  user: {
-    id: number
-  }
-
-  category: {
-    id: number
-  }
-
-  amount: number
-  date: string
-  description: string
-  paymentMethod: string
-  paid: boolean
-  recurringPayment: boolean
-}
+  
 
 function App() {
 
@@ -44,6 +31,15 @@ function App() {
         <Route path="/expenses/add" element={<AddExpense 
         setExpenses={setExpenses}
         />}/>
+        <Route
+          path='/expenses/edit/:id'
+          element= {
+            <EditExpense
+              expenses={expenses}
+              setExpenses={setExpenses}
+              />
+          }
+        />
 
         <Route path="/incomes" element={<Incomes />}/>
         <Route path="/incomes/add" element={<AddIncome />}/>

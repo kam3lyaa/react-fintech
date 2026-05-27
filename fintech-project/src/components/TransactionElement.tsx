@@ -4,10 +4,12 @@ interface TransactionElementProps {
   icon: string
   date: string
   value: number
-
+  onDelete: () => void
+  onEdit: () => void
+  
 }
 
-const TransactionElement = ({ iconColor, icon, date, name,value }: TransactionElementProps) => {
+const TransactionElement = ({ iconColor, icon, date, name,value, onDelete, onEdit }: TransactionElementProps) => {
   return (
     
       <article className="col-11 row my-4 mx-auto my-auto " >
@@ -28,8 +30,8 @@ const TransactionElement = ({ iconColor, icon, date, name,value }: TransactionEl
               </div>
 
               <div className="col-3 p-2 my-auto  ms-2 d-flex" >
-                <button className="button-delete"><i className="bi bi-trash3 "></i></button>
-                <button className="button-edit"><i className="bi bi-pencil"></i></button>
+                <button className="button-delete"><i className="bi bi-trash3" onClick={onDelete}></i></button>
+                <button className="button-edit" onClick={onEdit}><i className="bi bi-pencil"></i></button>
               </div>
 
           </article>

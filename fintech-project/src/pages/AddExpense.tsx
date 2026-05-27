@@ -5,23 +5,9 @@ import TransactionAddHeader from '../components/TransactionAddHeader';
 import TransactionForm from '../components/TransactionForm';
 import ExpenseForm from '../components/ExpenseForm';
 import { useNavigate } from 'react-router-dom';
+import type { Expense } from "../types/Expense";
 
-type Expense = {
-user: {
-  id: number
-}
 
-category: {
-  id: number
-}
-
-amount: number
-date: string
-description: string
-paymentMethod: string
-paid: boolean
-recurringPayment: boolean
-}
 interface AddExpenseProps{
   setExpenses: React.Dispatch<React.SetStateAction<Expense[]>>
 }
@@ -73,7 +59,7 @@ const AddExpense =({setExpenses}: AddExpenseProps) => {
 
       const data = await response.json()
       console.log(data);
-      setExpenses((prev) => [...prev, expense])
+      setExpenses((prev) => [...prev, data])
       navigate('/expenses'); 
     }catch(error) {
       console.log(error);
@@ -82,6 +68,8 @@ const AddExpense =({setExpenses}: AddExpenseProps) => {
 
     
   }
+
+
 
 
   return (

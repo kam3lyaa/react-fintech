@@ -1,6 +1,7 @@
 import TransactionElement from "./TransactionElement";
 
 type Transaction = {
+  id: number
   amount: number
   date: string
   description: string
@@ -10,9 +11,11 @@ interface Props {
   data: Transaction[];
   colorIcon: string
   icon: string
+  onDelete: (id: number) =>void
+  onEdit: (id: number) =>void
 }
 
-const TransactionContainer = ({ data, colorIcon, icon }: Props) => {
+const TransactionContainer = ({ data, colorIcon, icon, onDelete, onEdit }: Props) => {
 
   return (
     <section className="section-exib exibir-gastos">
@@ -28,6 +31,8 @@ const TransactionContainer = ({ data, colorIcon, icon }: Props) => {
               icon={icon}
               iconColor={colorIcon}
               key={index}
+              onDelete={()=> onDelete(item.id)}
+              onEdit={()=> onEdit(item.id)}
             />
           )
 

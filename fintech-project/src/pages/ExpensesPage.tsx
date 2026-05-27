@@ -4,24 +4,8 @@ import AddButton from "../components/AddButton";
 import Navbar from "../components/Navbar";
 import TransactionContainer from "../components/TransactionContainer";
 import TransactionListHeader from "../components/TransactionListHeader";
+import type { Expense } from "../types/Expense";
 
-
-type Expense = {
-  user: {
-    id: number
-  }
-
-  category: {
-    id: number
-  }
-
-  amount: number
-  date: string
-  description: string
-  paymentMethod: string
-  paid: boolean
-  recurringPayment: boolean
-}
 
 
 interface ExpensesProps{
@@ -54,8 +38,26 @@ const Expenses = ({ expenses, setExpenses  }: ExpensesProps) => {
   
   React.useEffect(() => {
     fetchExpenses()
-  }, [])
+  }, []);
 
+    const handleDeleteExpense = async (id: number) => {
+    try {
+      await fetch(`http://localhost:8080/api/expenses/${id}`, {
+        method: 'DELETE'
+      })
+      setExpenses((prev) => 
+        prev.filter((expense)=> expense.id !== id)
+      )
+    }catch(error){
+      console.log(error);
+      
+    }
+  }
+
+  const handleEditExpense = (id: number) => {
+  navigate(`/expenses/edit/${id}`);
+};
+  
   return (
     <>
         <Navbar/>
@@ -72,6 +74,8 @@ const Expenses = ({ expenses, setExpenses  }: ExpensesProps) => {
         <TransactionContainer data={expenses}
           colorIcon="texto-vermelho"
           icon="bi bi-cash-stack"
+          onDelete={handleDeleteExpense}
+          onEdit={handleEditExpense}
           />
 
         <AddButton 
